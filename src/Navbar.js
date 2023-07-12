@@ -1,11 +1,11 @@
 import React from 'react'
 import './Navbar.css'
-import { AppBar, Avatar, IconButton,Box,Tooltip,Menu,TextField, InputBase,Button, MenuList,MenuItem,Divider,ListItemIcon} from '@mui/material'
-import Typography from '@mui/material/Typography';
-import {Logout,Settings,PersonAdd} from '@mui/icons-material';
+import {Avatar, IconButton,Box,Menu,MenuItem,Divider,ListItemIcon} from '@mui/material'
+// import Typography from '@mui/material/Typography';
+import {Logout,Settings} from '@mui/icons-material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 // import {FaPlus} from 'react-icons/fa'
 import logo from './logo.png'
 function Navbar() {
@@ -90,7 +90,7 @@ function Navbar() {
           <BookmarkBorderIcon>
             <Settings fontSize="small" />
           </BookmarkBorderIcon>
-          &nbsp;&nbsp;&nbsp;Favorites
+          &nbsp;&nbsp;&nbsp;BookMarks
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
@@ -110,20 +110,20 @@ function Navbar() {
         <div className="whole-page">
           <div className="left-section">
             <div className='side'>
-            <div className="first"><button className='firstbutton'>Folder</button></div>
-            <div className="first"><button className='firstbutton'>My Surveys</button></div>
-            <div className="first"><button className='firstbutton'>Shared</button></div>
-            <div className="first"><button className='firstbutton'>General</button></div>
+            <button className='container1'>Folder</button>
+            <button className='container1'>My Surveys</button>
+            <button className='container1'>Templates</button>
+            <button className='container1'>Shared</button>
           </div>
-
           </div>
        
           <div className="right-section">
-            <h2>Login</h2>
+            <div className='my1'><div className="my"><p>My Surveys</p></div></div>
+            {/* <div className='image1'></div> */}
           </div>
         </div> 
     </>
   )
 }
-
+{/* <img src="https://img.freepik.com/premium-vector/illustration-vector-graphic-cartoon-character-online-survey_516790-433.jpg" alt=""></img> */}
 export default Navbar

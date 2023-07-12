@@ -4,7 +4,7 @@ import LandingPage from './LandingPage'
 import LoginPage from './LoginPage.js'
 import RegisterPage from './RegisterPage'
 import ForgetPasswordPage from './ForgetPasswordPage'
-import HomePage from './HomePage'
+// import HomePage from './HomePage'
 import Navbar from './Navbar'
 import './App.css'
 
