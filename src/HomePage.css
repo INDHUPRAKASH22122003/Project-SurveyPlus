@@ -1,0 +1,41 @@
+/***    Home Page     ***/
+
+.title {
+    color: #222;
+    padding-top: 10rem;
+    font-size: 3rem;
+    font-family: 'Fascinate', cursive;
+    text-transform: uppercase
+
+}
+.textcent{
+    text-align: center;
+}
+nav {
+    background-color: #f1f1f1;
+    padding: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  
+  a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
