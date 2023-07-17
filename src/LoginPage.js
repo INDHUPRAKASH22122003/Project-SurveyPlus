@@ -1,27 +1,41 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
-import './App.css'
+import React ,{useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import './LoginPage.css'
-export default function LoginPage() {
+import { useDispatch } from "react-redux";
+import { login } from "./userSlice";
+function LoginPage() {   
+    const navigate=useNavigate();
+const [username,setUsername]=useState("");
+  const dispatch=useDispatch();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(
+            login(
+                {
+                    name:username
+                }
+            )
+        )
+        navigate('/home')
+  }   
     return (
         <body>
         <div className='back'>
         <center>
         <div className='make'>
-        <div className="text-center m-5-auto">
+        <div className="auto">
             <h2>Sign in</h2>
             <div className='logform'>
-            <form action="/home">
+            <form onSubmit={handleSubmit}>
                 <p>
-                    <label>Username or email address</label><br/>
-                    <input type="text" placeholder="Enter your username" name="first_name" required />
+                    <label>Username</label><br/>
+                    <input  className="logi" type="text" placeholder="Enter your username" name="username" value={username} onChange={(event)=> setUsername(event.target.value)} required />
                 </p>
                 <p>
                     <label>Password</label>
                     <Link to="/forget-password"><label className="right-label">Forget password?</label></Link>
                     <br/>
-                    <input type="password" placeholder='Enter your password' name="password" required />
+                    <input className="logi" type="password" placeholder='Enter your password' name="password" required />
                 </p>
                 <p>
                     <center><button id="sub_btn" type="submit">Login</button></center>
@@ -37,5 +51,6 @@ export default function LoginPage() {
         </center>
         </div>
         </body>
-    )
-}
+    );
+};
+export default LoginPage

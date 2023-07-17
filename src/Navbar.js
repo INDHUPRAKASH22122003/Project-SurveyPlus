@@ -1,12 +1,9 @@
 import React from 'react'
 import './Navbar.css'
 import {Avatar, IconButton,Box,Menu,MenuItem,Divider,ListItemIcon} from '@mui/material'
-// import Typography from '@mui/material/Typography';
 import {Logout,Settings} from '@mui/icons-material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-// import {Link} from 'react-router-dom'
-// import {FaPlus} from 'react-icons/fa'
 import logo from './logo.png'
 function Navbar() {
   
@@ -27,11 +24,12 @@ function Navbar() {
 
             <div>
                 <ul id="navbar">
-                    <li><a className="active" href="index.html">Home</a></li>
-                    <li><a href="index.html">Survey</a></li>
+                    <li><a href="/home">Home</a></li>
+                    <li><a  href="/survey">Survey</a></li>
+                    <li><a className="active" href="/survey">Analysis</a></li>
                     <li><a href="index.html">Share</a></li>
-                    <li><a href="index.html">About</a></li>
-                     <li><a href="index.html">Contact</a></li>
+                    <li><a href="/About">About</a></li>
+                     <li><a href="/Contact">Contact</a></li>
                      <Box sx={{ flexGrow: 0 }}>
                      <li>
                       <IconButton
@@ -107,23 +105,8 @@ function Navbar() {
       </Menu>
             </div>
         </nav>
-        <div className="whole-page">
-          <div className="left-section">
-            <div className='side'>
-            <button className='container1'>Folder</button>
-            <button className='container1'>My Surveys</button>
-            <button className='container1'>Templates</button>
-            <button className='container1'>Shared</button>
-          </div>
-          </div>
-       
-          <div className="right-section">
-            <div className='my1'><div className="my"><p>My Surveys</p></div></div>
-            {/* <div className='image1'></div> */}
-          </div>
-        </div> 
     </>
   )
 }
-{/* <img src="https://img.freepik.com/premium-vector/illustration-vector-graphic-cartoon-character-online-survey_516790-433.jpg" alt=""></img> */}
+  
 export default Navbar

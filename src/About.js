@@ -1,22 +1,12 @@
 import React from 'react'
-import './HomePage.css'
+import './About.css'
 import {Avatar, IconButton,Box,Menu,MenuItem,Divider,ListItemIcon} from '@mui/material'
 import {Logout,Settings} from '@mui/icons-material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import {FaBars, FaFilter} from 'react-icons/fa'
-import QuizIcon from '@mui/icons-material/Quiz';
 import logo from './logo.png'
-import { useDispatch, useSelector } from "react-redux";
-import { logout, selectUser } from "./userSlice";
-function HomePage() {
-  const user = useSelector(selectUser);
-  const dispatch = useDispatch();
-  const handleLogout = (e) => {
-    e.preventDefault();
-    dispatch(logout());
-  };
-  const [anchorEl, setAnchorEl] = React.useState(null);
+function About() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -25,18 +15,18 @@ function HomePage() {
     setAnchorEl(null);
   };
   return (
-    <>
-        <nav>
+    <div>
+         <nav>
             <a href="index.html">
               <img src={logo}  width="90" height="60" alt=""></img>
             </a>
 
             <div>
                 <ul id="navbar">
-                    <li><a className="active" href="index.html">Home</a></li>
+                    <li><a  href="/home">Home</a></li>
                     <li><a href="/Surveyform">Survey</a></li>
                     <li><a href="index.html">Share</a></li>
-                    <li><a href="/About">About</a></li>
+                    <li><a className="active" href="/About">About</a></li>
                      <li><a href="/Contact">Contact</a></li>
                      <Box sx={{ flexGrow: 0 }}>
                      <li>
@@ -83,7 +73,7 @@ function HomePage() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> {user.name}
+          <Avatar /> My account
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>
@@ -113,28 +103,33 @@ function HomePage() {
       </Menu>
             </div>
         </nav>
-        <div className="whole-page">
-          <div className="left-section">
-            <div className='side'>
-            <button className='container1'>Folder</button>
-            <button className='container1'>My Surveys</button>
-            <button className='container1'>Templates</button>
-            <button className='container1'>Shared</button>
-          </div>
-          </div>
-       
-          <div className="right-section">
-            <div className='my'>
-              <div className='my1'><FaBars size={30}/>&nbsp;&nbsp;&nbsp;<FaFilter size={30}/></div>
-              <div className='my2'><button className='butt'>Create Survey</button></div>
-            </div>
-            <div className='image1'><img src="https://img.freepik.com/free-vector/feedback-survey-concept-illustration_114360-15500.jpg?w=2000" width="110%" height="350px" alt=""></img> </div>
-          <div className='help'><QuizIcon style={{width:"200px", height:"55px", color:"#17cf97"}}/>  <b><p className='help1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Help</p></b></div>
-          </div>
-        
-        </div> 
-    </>
+        <div id='desktop-2' className='desktop-2'>
+<div id='rectangle3' className='rectangle3'>
+</div><b>
+<div className='jyothiraam'>
+Name: Jyothiraam S R   
+Email: abc@gmail.com
+</div>
+<div i className='indhuprakash'>
+Name: Indhuprakash T M
+Email:abc@gmail.com
+</div></b>
+<div id='aboutus' className='aboutus' >
+ABOUT US</div>
+<div  className='content'>
+Survey+
+is an Survey and marketing automations platform for growing businesses. We empower millions of customers around the world to start and grow their businesses with world-class marketing technology, award-winning customer support, and inspiring content. Survey+ puts data-backed recommendations at the heart of your marketing and surveys, so you can find and engage customers across email, social media, landing pages, and advertising—automatically and with the power of AI.</div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"></link>
+<div id='creaters:' className='creaters' style={{fontFamily:"Audiowide"}}>
+CREATERS:</div>
+<b>
+<div id='name:imayeshmemail:abc@gmail.comlinkedin:instagram:' className='imayesh' >
+Name: Imayesh M
+Email:abc@gmail.com</div></b>
+</div>
+
+    </div>
   )
 }
-  
-export default HomePage
+
+export default About
