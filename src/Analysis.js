@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import LineChart from "./LineChart";
 // import PieChart from "./PieChart";
 import { UserData } from "./Data";
-function App() {
+function Analysis() {
     const [userData, setUserData] = useState({
       labels: UserData.map((data) => data.year),
       datasets: [
@@ -54,4 +54,4 @@ function App() {
     );
   }
   
-  export default App;
+  export default Analysis;
