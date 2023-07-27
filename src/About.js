@@ -5,8 +5,17 @@ import {Logout,Settings} from '@mui/icons-material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import logo from './logo.png'
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "./userSlice";
 function About() {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const handleLogout = (e) => {
+    e.preventDefault();
+    dispatch(logout());
+  };
+  
+  const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -25,7 +34,8 @@ function About() {
                 <ul id="navbar">
                     <li><a  href="/home">Home</a></li>
                     <li><a href="/Surveyform">Survey</a></li>
-                    <li><a href="index.html">Share</a></li>
+                    <li><a href="/Analysis">Analysis</a></li>
+                    <li><a href="/share">Share</a></li>
                     <li><a className="active" href="/About">About</a></li>
                      <li><a href="/Contact">Contact</a></li>
                      <Box sx={{ flexGrow: 0 }}>
@@ -73,7 +83,7 @@ function About() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> My account
+          <Avatar /> My Account
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>

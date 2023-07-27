@@ -12,9 +12,9 @@ export default function ForgetPasswordPage() {
             <h5>Enter your email address and we will send you a new password</h5>
             <form action="/login">
                 <p>
-                    <label id="reset_pass_lbl">Email address</label><br/>
+                    <label id="reset_pass_lbl">Email address</label>
                     <input type="email" name="email" required />
-                </p>
+                </p><br/>
                 <p>
                     <button id="sub_btn" type="submit">Send password reset email</button>
                 </p>

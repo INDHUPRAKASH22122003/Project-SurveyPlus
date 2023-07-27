@@ -36,7 +36,7 @@ h2 {
     margin: 2rem 0 1rem 0
   }
   
-  form label {
+  .formslabel {
     float: left;
     font-size: .9rem;
     margin: 0;
@@ -67,7 +67,8 @@ h2 {
   
   footer p {
     margin: 0;
-    font-size: .9rem
+    font-size: .9rem;
+    /* color: white; */
   }
 
   .logi{
@@ -93,3 +94,8 @@ h2 {
   .auto{
     margin: 3rem auto
   }
+ .makewhite{
+  color:rgb(229, 232, 234);
+  background-color: transparent;
+  text-decoration:none;
+ }

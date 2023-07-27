@@ -6,7 +6,11 @@ import {  Avatar, IconButton,Box,Menu,MenuItem,Divider,ListItemIcon} from '@mui/
 import {Logout,Settings} from '@mui/icons-material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "./userSlice";
+
 function Contact() {
+
   
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -15,6 +19,12 @@ function Contact() {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const handleLogout = (e) => {
+    e.preventDefault();
+    dispatch(logout());
   };
   return (
     <>
@@ -28,7 +38,8 @@ function Contact() {
                 <ul id="navbar">
                     <li><a  href="/home">Home</a></li>
                     <li><a href="/Surveyform">Survey</a></li>
-                    <li><a href="index.html">Share</a></li>
+                    <li><a href="/Analysis">Analysis</a></li>
+                    <li><a href="/share">Share</a></li>
                     <li><a href="/About">About</a></li>
                      <li><a className="active" href="/Contact">Contact</a></li>
                      <Box sx={{ flexGrow: 0 }}>
@@ -76,7 +87,7 @@ function Contact() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> My account
+          <Avatar /> My Account
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>

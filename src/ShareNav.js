@@ -1,22 +1,19 @@
 import React from 'react'
-import './HomePage.css'
+import './Navbar.css'
 import {Avatar, IconButton,Box,Menu,MenuItem,Divider,ListItemIcon} from '@mui/material'
 import {Logout,Settings} from '@mui/icons-material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import {FaBars, FaFilter} from 'react-icons/fa'
-import QuizIcon from '@mui/icons-material/Quiz';
 import logo from './logo.png'
 import { useDispatch, useSelector } from "react-redux";
 import { logout, selectUser } from "./userSlice";
-import { Link } from 'react-router-dom';
-function HomePage() {
-  const user = useSelector(selectUser);
-  const dispatch = useDispatch();
-  const handleLogout = (e) => {
-    e.preventDefault();
-    dispatch(logout());
-  };
+function ShareNav() {
+    const user = useSelector(selectUser);
+    const dispatch = useDispatch();
+    const handleLogout = (e) => {
+      e.preventDefault();
+      dispatch(logout());
+    };
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -34,10 +31,10 @@ function HomePage() {
 
             <div>
                 <ul id="navbar">
-                    <li><a className="active" href="index.html">Home</a></li>
-                    <li><a href="/Surveyform">Survey</a></li>
-                    <li><a href="/Analysis">Analysis</a></li>
-                    <li><a href="/share">Share</a></li>
+                    <li><a href="/home">Home</a></li>
+                    <li><a   href="/survey">Survey</a></li>
+                    <li><a  href="/Analysis">Analysis</a></li>
+                    <li><a  className="active" href="/share ">Share</a></li>
                     <li><a href="/About">About</a></li>
                      <li><a href="/Contact">Contact</a></li>
                      <Box sx={{ flexGrow: 0 }}>
@@ -85,7 +82,7 @@ function HomePage() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> {user.name}
+          <Avatar /> My Account
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>
@@ -115,28 +112,8 @@ function HomePage() {
       </Menu>
             </div>
         </nav>
-        <div className="whole-page">
-          <div className="left-section">
-            <div className='side'>
-            <button className='container1'>Folder</button>
-            <button className='container1'>My Surveys</button>
-            <button className='container1'>Templates</button>
-            <button className='container1'>Shared</button>
-          </div>
-          </div>
-       
-          <div className="right-section">
-            <div className='my'>
-              <div className='my1'><FaBars size={30}/>&nbsp;&nbsp;&nbsp;<FaFilter size={30}/></div>
-              <div className='my2'><Link to='/Surveyform'><button className='butt'>Create Survey</button></Link></div>
-            </div>
-            <div className='image1'><img src="https://img.freepik.com/free-vector/feedback-survey-concept-illustration_114360-15500.jpg?w=2000" width="110%" height="350px" alt=""></img> </div>
-          <div className='help'><QuizIcon style={{width:"200px", height:"55px", color:"#17cf97"}}/>  <b><p className='help1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Help</p></b></div>
-          </div>
-        
-        </div> 
     </>
   )
 }
   
-export default HomePage
+export default ShareNav
